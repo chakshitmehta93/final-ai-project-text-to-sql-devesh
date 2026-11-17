@@ -1,0 +1,22 @@
+sqlalchemy
+sqlglot>=23.0
+sentence-transformers>=2.7
+chromadb>=0.5
+pandas
+plotly
+streamlit>=1.35
+requests
+numpy
+python-dotenv
+
+# optional: postgres driver
+psycopg2-binary
+
+# optional: huggingface local backend
+# torch
+# transformers
+# accelerate
+# bitsandbytes
+# peft
+# trl
+# datasets

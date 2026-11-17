@@ -1,0 +1,512 @@
+[
+  {
+    "q": "List all department names.",
+    "sql": "SELECT dept_name FROM departments;",
+    "level": "easy"
+  },
+  {
+    "q": "Show all faculty members with their designations.",
+    "sql": "SELECT name, designation FROM faculty;",
+    "level": "easy"
+  },
+  {
+    "q": "List all active faculty members.",
+    "sql": "SELECT name, designation FROM faculty WHERE status = 'Active';",
+    "level": "easy"
+  },
+  {
+    "q": "List all students in year 2.",
+    "sql": "SELECT name, dept_id FROM students WHERE year = 2;",
+    "level": "easy"
+  },
+  {
+    "q": "Show all courses with their credit hours.",
+    "sql": "SELECT course_name, credits FROM courses;",
+    "level": "easy"
+  },
+  {
+    "q": "List all core courses.",
+    "sql": "SELECT course_name, course_code FROM courses WHERE course_type = 'Core';",
+    "level": "easy"
+  },
+  {
+    "q": "Show all female students.",
+    "sql": "SELECT name, email FROM students WHERE gender = 'F';",
+    "level": "easy"
+  },
+  {
+    "q": "List all students who have graduated.",
+    "sql": "SELECT name, dept_id FROM students WHERE status = 'Graduated';",
+    "level": "easy"
+  },
+  {
+    "q": "Show all hostels for male students.",
+    "sql": "SELECT hostel_name, capacity FROM hostels WHERE gender = 'M';",
+    "level": "easy"
+  },
+  {
+    "q": "List all active clubs.",
+    "sql": "SELECT club_name FROM clubs WHERE status = 'Active';",
+    "level": "easy"
+  },
+  {
+    "q": "Show all departments established after 2000.",
+    "sql": "SELECT dept_name, established_year FROM departments WHERE established_year > 2000;",
+    "level": "easy"
+  },
+  {
+    "q": "List all elective courses.",
+    "sql": "SELECT course_name, course_code FROM courses WHERE course_type = 'Elective';",
+    "level": "easy"
+  },
+  {
+    "q": "Show all fees records with status Unpaid.",
+    "sql": "SELECT student_id, semester, amount FROM fees WHERE status = 'Unpaid';",
+    "level": "easy"
+  },
+  {
+    "q": "List all students who are dropped.",
+    "sql": "SELECT name, email FROM students WHERE status = 'Dropped';",
+    "level": "easy"
+  },
+  {
+    "q": "Show all lab courses.",
+    "sql": "SELECT course_name, course_code FROM courses WHERE course_type = 'Lab';",
+    "level": "easy"
+  },
+  {
+    "q": "List all enrollments with status Completed.",
+    "sql": "SELECT student_id, course_id, semester FROM enrollments WHERE status = 'Completed';",
+    "level": "easy"
+  },
+  {
+    "q": "Show all marks where score is greater than 90.",
+    "sql": "SELECT student_id, course_id, score, grade FROM marks WHERE score > 90;",
+    "level": "easy"
+  },
+  {
+    "q": "List hostel allotments for students in year 1.",
+    "sql": "SELECT ha.student_id, ha.hostel_id, ha.room_no FROM hostel_allotments ha WHERE ha.year = 1;",
+    "level": "easy"
+  },
+  {
+    "q": "Show all club members who are club presidents.",
+    "sql": "SELECT student_id, club_id FROM club_members WHERE role = 'President';",
+    "level": "easy"
+  },
+  {
+    "q": "List all departments and their head of department names.",
+    "sql": "SELECT dept_name, hod_name FROM departments;",
+    "level": "easy"
+  },
+  {
+    "q": "Show all faculty members who are on leave.",
+    "sql": "SELECT name, email FROM faculty WHERE status = 'On-Leave';",
+    "level": "easy"
+  },
+  {
+    "q": "List all courses offered in year 1.",
+    "sql": "SELECT course_name, course_code FROM courses WHERE year = 1;",
+    "level": "easy"
+  },
+  {
+    "q": "Show all fees records with partial payment status.",
+    "sql": "SELECT student_id, semester, amount, paid FROM fees WHERE status = 'Partial';",
+    "level": "easy"
+  },
+  {
+    "q": "List all marks with grade A.",
+    "sql": "SELECT student_id, course_id, score FROM marks WHERE grade = 'A';",
+    "level": "easy"
+  },
+  {
+    "q": "Show all female hostels and their capacity.",
+    "sql": "SELECT hostel_name, capacity FROM hostels WHERE gender = 'F';",
+    "level": "easy"
+  },
+  {
+    "q": "List all enrollments for semester 1.",
+    "sql": "SELECT student_id, course_id FROM enrollments WHERE semester = 1;",
+    "level": "easy"
+  },
+  {
+    "q": "Show all students with college email addresses.",
+    "sql": "SELECT name, email FROM students WHERE email LIKE '%@college.edu';",
+    "level": "easy"
+  },
+  {
+    "q": "List all marks where score is below 40 (failing).",
+    "sql": "SELECT student_id, course_id, score, grade FROM marks WHERE score < 40;",
+    "level": "easy"
+  },
+  {
+    "q": "Show all club members who joined in year 2.",
+    "sql": "SELECT student_id, club_id, role FROM club_members WHERE year = 2;",
+    "level": "easy"
+  },
+  {
+    "q": "List all courses with more than 3 credits.",
+    "sql": "SELECT course_name, credits FROM courses WHERE credits > 3;",
+    "level": "easy"
+  },
+  {
+    "q": "List all students along with their department names.",
+    "sql": "SELECT s.name, d.dept_name FROM students s JOIN departments d ON s.dept_id = d.dept_id;",
+    "level": "medium"
+  },
+  {
+    "q": "Show all faculty members and the department they belong to.",
+    "sql": "SELECT f.name, d.dept_name FROM faculty f JOIN departments d ON f.dept_id = d.dept_id;",
+    "level": "medium"
+  },
+  {
+    "q": "List all courses with their department names.",
+    "sql": "SELECT c.course_name, d.dept_name FROM courses c JOIN departments d ON c.dept_id = d.dept_id;",
+    "level": "medium"
+  },
+  {
+    "q": "Show each student's name and the courses they are enrolled in.",
+    "sql": "SELECT s.name, c.course_name FROM students s JOIN enrollments e ON s.student_id = e.student_id JOIN courses c ON e.course_id = c.course_id;",
+    "level": "medium"
+  },
+  {
+    "q": "List all students in the CSE department.",
+    "sql": "SELECT s.name, s.year FROM students s JOIN departments d ON s.dept_id = d.dept_id WHERE d.dept_code = 'CSE';",
+    "level": "medium"
+  },
+  {
+    "q": "Show all faculty in the CSE department.",
+    "sql": "SELECT f.name, f.designation FROM faculty f JOIN departments d ON f.dept_id = d.dept_id WHERE d.dept_code = 'CSE';",
+    "level": "medium"
+  },
+  {
+    "q": "List the names of students and their hostel names.",
+    "sql": "SELECT s.name, h.hostel_name FROM students s JOIN hostel_allotments ha ON s.student_id = ha.student_id JOIN hostels h ON ha.hostel_id = h.hostel_id;",
+    "level": "medium"
+  },
+  {
+    "q": "Show all clubs along with the name of the faculty advisor.",
+    "sql": "SELECT c.club_name, f.name AS faculty_advisor FROM clubs c JOIN faculty f ON c.faculty_id = f.faculty_id;",
+    "level": "medium"
+  },
+  {
+    "q": "List students who have failed in any course (score < 40).",
+    "sql": "SELECT DISTINCT s.name FROM students s JOIN marks m ON s.student_id = m.student_id WHERE m.score < 40;",
+    "level": "medium"
+  },
+  {
+    "q": "Show each student's name and their attendance percentage in each course.",
+    "sql": "SELECT s.name, c.course_name, ROUND(a.attended * 100.0 / a.total_classes, 2) AS attendance_pct FROM students s JOIN attendance a ON s.student_id = a.student_id JOIN courses c ON a.course_id = c.course_id;",
+    "level": "medium"
+  },
+  {
+    "q": "List all students and the total fees they owe (Unpaid).",
+    "sql": "SELECT s.name, SUM(f.amount) AS total_unpaid FROM students s JOIN fees f ON s.student_id = f.student_id WHERE f.status = 'Unpaid' GROUP BY s.student_id, s.name;",
+    "level": "medium"
+  },
+  {
+    "q": "Show all club members along with the club name.",
+    "sql": "SELECT s.name, c.club_name, cm.role FROM students s JOIN club_members cm ON s.student_id = cm.student_id JOIN clubs c ON cm.club_id = c.club_id;",
+    "level": "medium"
+  },
+  {
+    "q": "List all marks along with the student name and course name.",
+    "sql": "SELECT s.name, c.course_name, m.score, m.grade FROM marks m JOIN students s ON m.student_id = s.student_id JOIN courses c ON m.course_id = c.course_id;",
+    "level": "medium"
+  },
+  {
+    "q": "Show all students who are enrolled in core courses.",
+    "sql": "SELECT DISTINCT s.name FROM students s JOIN enrollments e ON s.student_id = e.student_id JOIN courses c ON e.course_id = c.course_id WHERE c.course_type = 'Core';",
+    "level": "medium"
+  },
+  {
+    "q": "List all active students and their department names.",
+    "sql": "SELECT s.name, d.dept_name FROM students s JOIN departments d ON s.dept_id = d.dept_id WHERE s.status = 'Active';",
+    "level": "medium"
+  },
+  {
+    "q": "Show attendance details for CSE students.",
+    "sql": "SELECT s.name, c.course_name, a.attended, a.total_classes FROM students s JOIN departments d ON s.dept_id = d.dept_id JOIN attendance a ON s.student_id = a.student_id JOIN courses c ON a.course_id = c.course_id WHERE d.dept_code = 'CSE';",
+    "level": "medium"
+  },
+  {
+    "q": "List the room numbers and hostel names for all students.",
+    "sql": "SELECT s.name, h.hostel_name, ha.room_no FROM students s JOIN hostel_allotments ha ON s.student_id = ha.student_id JOIN hostels h ON ha.hostel_id = h.hostel_id;",
+    "level": "medium"
+  },
+  {
+    "q": "Show all currently enrolled students along with their course names.",
+    "sql": "SELECT s.name, c.course_name, e.semester FROM enrollments e JOIN students s ON e.student_id = s.student_id JOIN courses c ON e.course_id = c.course_id WHERE e.status = 'Enrolled';",
+    "level": "medium"
+  },
+  {
+    "q": "List all students who scored an A grade and their course names.",
+    "sql": "SELECT s.name, c.course_name, m.score FROM marks m JOIN students s ON m.student_id = s.student_id JOIN courses c ON m.course_id = c.course_id WHERE m.grade = 'A';",
+    "level": "medium"
+  },
+  {
+    "q": "Show each student's total fees paid so far.",
+    "sql": "SELECT s.name, SUM(f.paid) AS total_paid FROM students s JOIN fees f ON s.student_id = f.student_id GROUP BY s.student_id, s.name;",
+    "level": "medium"
+  },
+  {
+    "q": "List all departments and the number of faculty members in each.",
+    "sql": "SELECT d.dept_name, COUNT(f.faculty_id) AS faculty_count FROM departments d LEFT JOIN faculty f ON d.dept_id = f.dept_id GROUP BY d.dept_id, d.dept_name;",
+    "level": "medium"
+  },
+  {
+    "q": "Show each course and the number of students enrolled in it.",
+    "sql": "SELECT c.course_name, COUNT(e.student_id) AS enrolled_count FROM courses c LEFT JOIN enrollments e ON c.course_id = e.course_id GROUP BY c.course_id, c.course_name;",
+    "level": "medium"
+  },
+  {
+    "q": "List all students in female hostels.",
+    "sql": "SELECT s.name FROM students s JOIN hostel_allotments ha ON s.student_id = ha.student_id JOIN hostels h ON ha.hostel_id = h.hostel_id WHERE h.gender = 'F';",
+    "level": "medium"
+  },
+  {
+    "q": "Show marks of students in semester 2.",
+    "sql": "SELECT s.name, c.course_name, m.score, m.grade FROM marks m JOIN students s ON m.student_id = s.student_id JOIN courses c ON m.course_id = c.course_id WHERE m.semester = 2;",
+    "level": "medium"
+  },
+  {
+    "q": "List all club members in active clubs.",
+    "sql": "SELECT s.name, c.club_name, cm.role FROM club_members cm JOIN students s ON cm.student_id = s.student_id JOIN clubs c ON cm.club_id = c.club_id WHERE c.status = 'Active';",
+    "level": "medium"
+  },
+  {
+    "q": "Show all courses taught in each department with the count.",
+    "sql": "SELECT d.dept_name, COUNT(c.course_id) AS course_count FROM departments d JOIN courses c ON d.dept_id = c.dept_id GROUP BY d.dept_id, d.dept_name;",
+    "level": "medium"
+  },
+  {
+    "q": "List all students and their marks for lab courses.",
+    "sql": "SELECT s.name, c.course_name, m.score FROM marks m JOIN students s ON m.student_id = s.student_id JOIN courses c ON m.course_id = c.course_id WHERE c.course_type = 'Lab';",
+    "level": "medium"
+  },
+  {
+    "q": "Show students who have attendance below 75% in any course.",
+    "sql": "SELECT s.name, c.course_name, ROUND(a.attended * 100.0 / a.total_classes, 2) AS attendance_pct FROM students s JOIN attendance a ON s.student_id = a.student_id JOIN courses c ON a.course_id = c.course_id WHERE (a.attended * 100.0 / a.total_classes) < 75;",
+    "level": "medium"
+  },
+  {
+    "q": "List all students who have completed any enrollment.",
+    "sql": "SELECT DISTINCT s.name FROM students s JOIN enrollments e ON s.student_id = e.student_id WHERE e.status = 'Completed';",
+    "level": "medium"
+  },
+  {
+    "q": "Show all fees records for students in CSE department.",
+    "sql": "SELECT s.name, f.semester, f.amount, f.status FROM fees f JOIN students s ON f.student_id = s.student_id JOIN departments d ON s.dept_id = d.dept_id WHERE d.dept_code = 'CSE';",
+    "level": "medium"
+  },
+  {
+    "q": "List the faculty advisor name for each active club.",
+    "sql": "SELECT cl.club_name, f.name AS advisor FROM clubs cl JOIN faculty f ON cl.faculty_id = f.faculty_id WHERE cl.status = 'Active';",
+    "level": "medium"
+  },
+  {
+    "q": "Show each student's name and total marks scored across all courses.",
+    "sql": "SELECT s.name, SUM(m.score) AS total_score FROM students s JOIN marks m ON s.student_id = m.student_id GROUP BY s.student_id, s.name;",
+    "level": "medium"
+  },
+  {
+    "q": "List students enrolled in more than 3 courses.",
+    "sql": "SELECT s.name, COUNT(DISTINCT e.course_id) AS cnt FROM students s JOIN enrollments e ON s.student_id = e.student_id GROUP BY s.student_id, s.name HAVING COUNT(DISTINCT e.course_id) > 3;",
+    "level": "medium"
+  },
+  {
+    "q": "Show all female students in the CSE department.",
+    "sql": "SELECT s.name, s.email FROM students s JOIN departments d ON s.dept_id = d.dept_id WHERE d.dept_code = 'CSE' AND s.gender = 'F';",
+    "level": "medium"
+  },
+  {
+    "q": "List all students and their enrolled courses with the department name.",
+    "sql": "SELECT s.name, c.course_name, d.dept_name FROM enrollments e JOIN students s ON e.student_id = s.student_id JOIN courses c ON e.course_id = c.course_id JOIN departments d ON c.dept_id = d.dept_id;",
+    "level": "medium"
+  },
+  {
+    "q": "Show each hostel and how many students are allotted to it.",
+    "sql": "SELECT h.hostel_name, COUNT(ha.student_id) AS allotted FROM hostels h LEFT JOIN hostel_allotments ha ON h.hostel_id = ha.hostel_id GROUP BY h.hostel_id, h.hostel_name;",
+    "level": "medium"
+  },
+  {
+    "q": "List all year-3 students and their scores in all courses.",
+    "sql": "SELECT s.name, c.course_name, m.score FROM marks m JOIN students s ON m.student_id = s.student_id JOIN courses c ON m.course_id = c.course_id WHERE s.year = 3;",
+    "level": "medium"
+  },
+  {
+    "q": "Show all students with unpaid fees along with the amount due.",
+    "sql": "SELECT s.name, f.semester, f.amount FROM fees f JOIN students s ON f.student_id = s.student_id WHERE f.status = 'Unpaid';",
+    "level": "medium"
+  },
+  {
+    "q": "List all students who passed all their courses (no score below 40).",
+    "sql": "SELECT DISTINCT s.name FROM students s WHERE s.student_id NOT IN (SELECT m.student_id FROM marks m WHERE m.score < 40);",
+    "level": "medium"
+  },
+  {
+    "q": "Show the grade distribution (count of each grade) across all marks.",
+    "sql": "SELECT grade, COUNT(*) AS count FROM marks GROUP BY grade;",
+    "level": "medium"
+  },
+  {
+    "q": "List all departments with the number of active students.",
+    "sql": "SELECT d.dept_name, COUNT(s.student_id) AS active_students FROM departments d JOIN students s ON d.dept_id = s.dept_id WHERE s.status = 'Active' GROUP BY d.dept_id, d.dept_name;",
+    "level": "medium"
+  },
+  {
+    "q": "Find the top 5 students by average score across all courses.",
+    "sql": "SELECT s.name, ROUND(AVG(m.score), 2) AS avg_score FROM students s JOIN marks m ON s.student_id = m.student_id GROUP BY s.student_id, s.name ORDER BY avg_score DESC LIMIT 5;",
+    "level": "hard"
+  },
+  {
+    "q": "List departments where average student score is above 65.",
+    "sql": "SELECT d.dept_name, ROUND(AVG(m.score), 2) AS avg_score FROM departments d JOIN students s ON d.dept_id = s.dept_id JOIN marks m ON s.student_id = m.student_id GROUP BY d.dept_id, d.dept_name HAVING AVG(m.score) > 65;",
+    "level": "hard"
+  },
+  {
+    "q": "Find students who have attendance below 75% in more than 2 courses.",
+    "sql": "SELECT s.name, COUNT(a.course_id) AS low_att_courses FROM students s JOIN attendance a ON s.student_id = a.student_id WHERE (a.attended * 100.0 / a.total_classes) < 75 GROUP BY s.student_id, s.name HAVING COUNT(a.course_id) > 2;",
+    "level": "hard"
+  },
+  {
+    "q": "List all students who have failed in at least one course along with the course name.",
+    "sql": "SELECT s.name, c.course_name, m.score FROM marks m JOIN students s ON m.student_id = s.student_id JOIN courses c ON m.course_id = c.course_id WHERE m.score < 40;",
+    "level": "hard"
+  },
+  {
+    "q": "Find the department with the highest number of enrolled students.",
+    "sql": "SELECT d.dept_name, COUNT(s.student_id) AS student_count FROM departments d JOIN students s ON d.dept_id = s.dept_id GROUP BY d.dept_id, d.dept_name ORDER BY student_count DESC LIMIT 1;",
+    "level": "hard"
+  },
+  {
+    "q": "List courses where the average score is above 55.",
+    "sql": "SELECT c.course_name, ROUND(AVG(m.score), 2) AS avg_score FROM courses c JOIN marks m ON c.course_id = m.course_id GROUP BY c.course_id, c.course_name HAVING AVG(m.score) > 55;",
+    "level": "hard"
+  },
+  {
+    "q": "Show the student with the highest score in each course.",
+    "sql": "SELECT c.course_name, s.name, m.score FROM marks m JOIN students s ON m.student_id = s.student_id JOIN courses c ON m.course_id = c.course_id WHERE m.score = (SELECT MAX(m2.score) FROM marks m2 WHERE m2.course_id = m.course_id);",
+    "level": "hard"
+  },
+  {
+    "q": "Find all students who have both unpaid fees and low attendance (below 75%) in any course.",
+    "sql": "SELECT DISTINCT s.name FROM students s WHERE s.student_id IN (SELECT f.student_id FROM fees f WHERE f.status = 'Unpaid') AND s.student_id IN (SELECT a.student_id FROM attendance a WHERE a.attended * 100.0 / a.total_classes < 75);",
+    "level": "hard"
+  },
+  {
+    "q": "List the top 3 courses by number of failures (score < 40).",
+    "sql": "SELECT c.course_name, COUNT(*) AS fail_count FROM marks m JOIN courses c ON m.course_id = c.course_id WHERE m.score < 40 GROUP BY c.course_id, c.course_name ORDER BY fail_count DESC LIMIT 3;",
+    "level": "hard"
+  },
+  {
+    "q": "Find students enrolled in all core courses of their department.",
+    "sql": "SELECT s.name FROM students s WHERE NOT EXISTS (SELECT c.course_id FROM courses c WHERE c.dept_id = s.dept_id AND c.course_type = 'Core' AND c.course_id NOT IN (SELECT e.course_id FROM enrollments e WHERE e.student_id = s.student_id));",
+    "level": "hard"
+  },
+  {
+    "q": "Show each department's pass rate (percentage of marks >= 40).",
+    "sql": "SELECT d.dept_name, ROUND(100.0 * SUM(CASE WHEN m.score >= 40 THEN 1 ELSE 0 END) / COUNT(*), 2) AS pass_rate FROM departments d JOIN students s ON d.dept_id = s.dept_id JOIN marks m ON s.student_id = m.student_id GROUP BY d.dept_id, d.dept_name;",
+    "level": "hard"
+  },
+  {
+    "q": "Find all students who scored higher than the average score of their department.",
+    "sql": "SELECT s.name, ROUND(AVG(m.score), 2) AS student_avg FROM students s JOIN marks m ON s.student_id = m.student_id GROUP BY s.student_id, s.name, s.dept_id HAVING AVG(m.score) > (SELECT AVG(m2.score) FROM marks m2 JOIN students s2 ON m2.student_id = s2.student_id WHERE s2.dept_id = s.dept_id);",
+    "level": "hard"
+  },
+  {
+    "q": "List the faculty advisor of the club with the most members.",
+    "sql": "SELECT f.name, cl.club_name, COUNT(cm.student_id) AS member_count FROM clubs cl JOIN faculty f ON cl.faculty_id = f.faculty_id JOIN club_members cm ON cl.club_id = cm.club_id GROUP BY cl.club_id, cl.club_name, f.name ORDER BY member_count DESC LIMIT 1;",
+    "level": "hard"
+  },
+  {
+    "q": "Show students who scored above 70 on average across all their courses.",
+    "sql": "SELECT s.name, ROUND(AVG(m.score),2) AS avg_score FROM students s JOIN marks m ON s.student_id = m.student_id GROUP BY s.student_id, s.name HAVING AVG(m.score) > 70;",
+    "level": "hard"
+  },
+  {
+    "q": "Find the total amount of unpaid fees per department.",
+    "sql": "SELECT d.dept_name, SUM(f.amount) AS total_unpaid FROM departments d JOIN students s ON d.dept_id = s.dept_id JOIN fees f ON s.student_id = f.student_id WHERE f.status = 'Unpaid' GROUP BY d.dept_id, d.dept_name;",
+    "level": "hard"
+  },
+  {
+    "q": "List all students who are in the same hostel as a student from a different department.",
+    "sql": "SELECT DISTINCT s.name, h.hostel_name FROM students s JOIN hostel_allotments ha ON s.student_id = ha.student_id JOIN hostels h ON ha.hostel_id = h.hostel_id WHERE EXISTS (SELECT 1 FROM hostel_allotments ha2 JOIN students s2 ON ha2.student_id = s2.student_id WHERE ha2.hostel_id = ha.hostel_id AND s2.dept_id != s.dept_id);",
+    "level": "hard"
+  },
+  {
+    "q": "Show each semester's total fees collected (Paid + Partial) across all students.",
+    "sql": "SELECT semester, SUM(paid) AS total_collected FROM fees GROUP BY semester;",
+    "level": "hard"
+  },
+  {
+    "q": "Find courses where more than 10 students scored above 60.",
+    "sql": "SELECT c.course_name, COUNT(*) AS cnt FROM courses c JOIN marks m ON c.course_id = m.course_id WHERE m.score > 60 GROUP BY c.course_id, c.course_name HAVING COUNT(*) > 10;",
+    "level": "hard"
+  },
+  {
+    "q": "List students with average attendance below 60% across all their courses.",
+    "sql": "SELECT s.name, ROUND(AVG(a.attended * 100.0 / a.total_classes), 2) AS avg_attendance FROM students s JOIN attendance a ON s.student_id = a.student_id GROUP BY s.student_id, s.name HAVING AVG(a.attended * 100.0 / a.total_classes) < 60;",
+    "level": "hard"
+  },
+  {
+    "q": "Find the department with the highest average attendance percentage.",
+    "sql": "SELECT d.dept_name, ROUND(AVG(a.attended * 100.0 / a.total_classes), 2) AS avg_att FROM departments d JOIN students s ON d.dept_id = s.dept_id JOIN attendance a ON s.student_id = a.student_id GROUP BY d.dept_id, d.dept_name ORDER BY avg_att DESC LIMIT 1;",
+    "level": "hard"
+  },
+  {
+    "q": "List the students who have the most club memberships with their count.",
+    "sql": "SELECT s.name, COUNT(cm.club_id) AS club_count FROM students s JOIN club_members cm ON s.student_id = cm.student_id GROUP BY s.student_id, s.name ORDER BY club_count DESC LIMIT 5;",
+    "level": "hard"
+  },
+  {
+    "q": "Show each faculty member and the number of active clubs they advise.",
+    "sql": "SELECT f.name, COUNT(c.club_id) AS active_clubs FROM faculty f JOIN clubs c ON f.faculty_id = c.faculty_id WHERE c.status = 'Active' GROUP BY f.faculty_id, f.name;",
+    "level": "hard"
+  },
+  {
+    "q": "Find all students who are enrolled in courses from departments other than their own.",
+    "sql": "SELECT DISTINCT s.name FROM students s JOIN enrollments e ON s.student_id = e.student_id JOIN courses c ON e.course_id = c.course_id WHERE c.dept_id != s.dept_id;",
+    "level": "hard"
+  },
+  {
+    "q": "List the top-performing student in each department by highest average score.",
+    "sql": "SELECT d.dept_name, s.name, ROUND(AVG(m.score), 2) AS avg_score FROM departments d JOIN students s ON d.dept_id = s.dept_id JOIN marks m ON s.student_id = m.student_id GROUP BY d.dept_id, d.dept_name, s.student_id, s.name HAVING AVG(m.score) = (SELECT MAX(sub.avg_s) FROM (SELECT AVG(m2.score) AS avg_s FROM marks m2 JOIN students s2 ON m2.student_id = s2.student_id WHERE s2.dept_id = d.dept_id GROUP BY s2.student_id) sub);",
+    "level": "hard"
+  },
+  {
+    "q": "Show all students who have paid all their fees (every record status = Paid).",
+    "sql": "SELECT s.name FROM students s WHERE s.student_id IN (SELECT f.student_id FROM fees f GROUP BY f.student_id HAVING SUM(CASE WHEN f.status != 'Paid' THEN 1 ELSE 0 END) = 0);",
+    "level": "hard"
+  },
+  {
+    "q": "Find all students who have no club membership.",
+    "sql": "SELECT s.name FROM students s WHERE s.student_id NOT IN (SELECT cm.student_id FROM club_members cm);",
+    "level": "hard"
+  },
+  {
+    "q": "Show each course's highest, lowest, and average score.",
+    "sql": "SELECT c.course_name, MAX(m.score) AS highest, MIN(m.score) AS lowest, ROUND(AVG(m.score), 2) AS avg_score FROM courses c JOIN marks m ON c.course_id = m.course_id GROUP BY c.course_id, c.course_name;",
+    "level": "hard"
+  },
+  {
+    "q": "List all students who have both failed a course and have unpaid fees.",
+    "sql": "SELECT DISTINCT s.name FROM students s WHERE s.student_id IN (SELECT m.student_id FROM marks m WHERE m.score < 40) AND s.student_id IN (SELECT f.student_id FROM fees f WHERE f.status = 'Unpaid');",
+    "level": "hard"
+  },
+  {
+    "q": "Find the course with the most enrolled students in the CSE department.",
+    "sql": "SELECT c.course_name, COUNT(e.student_id) AS enrolled FROM courses c JOIN enrollments e ON c.course_id = e.course_id JOIN departments d ON c.dept_id = d.dept_id WHERE d.dept_code = 'CSE' GROUP BY c.course_id, c.course_name ORDER BY enrolled DESC LIMIT 1;",
+    "level": "hard"
+  },
+  {
+    "q": "List departments where more than half the students have average attendance below 75%.",
+    "sql": "SELECT d.dept_name FROM departments d JOIN students s ON d.dept_id = s.dept_id GROUP BY d.dept_id, d.dept_name HAVING SUM(CASE WHEN s.student_id IN (SELECT a.student_id FROM attendance a GROUP BY a.student_id HAVING AVG(a.attended * 100.0 / a.total_classes) < 75) THEN 1 ELSE 0 END) > COUNT(s.student_id) / 2;",
+    "level": "hard"
+  },
+  {
+    "q": "Show each student's rank within their department based on average score.",
+    "sql": "SELECT s.name, d.dept_name, ROUND(AVG(m.score), 2) AS avg_score, RANK() OVER (PARTITION BY s.dept_id ORDER BY AVG(m.score) DESC) AS dept_rank FROM students s JOIN marks m ON s.student_id = m.student_id JOIN departments d ON s.dept_id = d.dept_id GROUP BY s.student_id, s.name, s.dept_id, d.dept_name;",
+    "level": "hard"
+  }
+]

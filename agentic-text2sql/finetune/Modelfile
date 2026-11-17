@@ -1,0 +1,2 @@
+FROM ./out/qwen2.5-coder-7b-text-to-sql-q4_k_m.gguf
+PARAMETER temperature 0
